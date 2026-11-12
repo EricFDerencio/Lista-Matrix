@@ -23,7 +23,7 @@ int[,] PopulaMatrizInversa(int[,] matriz, int[,]matrizInversa)
     {
         for (int j = 0; j < 5; j++)
         {
-            matrizInversa[(j), (2-i)] = matriz[i, j];
+            matrizInversa[(j), (i)] = matriz[(i), (j)];
         }
     }
 
