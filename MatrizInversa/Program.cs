@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 
 int[,] matriz = new int[3, 5];
 int[,] matrizInversa = new int[5 , 3];
+int[,] matrizEspelhada = new int[3, 5];
 
 int[,] PopulaMatriz(int[,] matriz)
 {
@@ -23,10 +24,22 @@ int[,] PopulaMatrizInversa(int[,] matriz, int[,]matrizInversa)
     {
         for (int j = 0; j < 5; j++)
         {
-            matrizInversa[(j), (i)] = matriz[(i), (j)];
+            matrizInversa[j,i] = matriz[i,j];
         }
     }
 
+    return matriz;
+}
+
+int[,] PopulaMatrizEspelhada(int[,] matriz)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            matrizEspelhada[(2-i),(4-j) ] = matriz[(i), (j)];
+        }
+    }
     return matriz;
 }
 void ExibeMatriz(int[,] matriz)
@@ -53,7 +66,10 @@ void ExibeMatrizInversa(int[,] matriz)
 }
 
 PopulaMatriz(matriz);
-PopulaMatrizInversa(matriz, matrizInversa);
 ExibeMatriz(matriz);
 Console.WriteLine("----------------------------------------");
+PopulaMatrizInversa(matriz, matrizInversa);
 ExibeMatrizInversa(matrizInversa);
+Console.WriteLine("----------------------------------------");
+PopulaMatrizEspelhada(matriz);
+ExibeMatriz(matrizEspelhada);
