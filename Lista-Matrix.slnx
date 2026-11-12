@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Lista-Matrix/ImprimeMatrix.csproj" />
+  <Project Path="MatrizInversa/MatrizInversa.csproj" />
+</Solution>
