@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Boletim/Boletim.csproj" Id="f5f06eb2-10de-4f5d-8c4a-c102ec2b0a76" />
+  <Project Path="ImprimeMatriz/ExibeMatriz.csproj" Id="9b8412ca-ca8c-4982-9675-1b03a8062f33" />
   <Project Path="Lista-Matrix/ImprimeMatrix.csproj" />
   <Project Path="MatrizInversa/MatrizInversa.csproj" />
 </Solution>
