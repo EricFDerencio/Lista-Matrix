@@ -1,5 +1,4 @@
 ﻿// 2- Faça um programa que gere o boletim escolar de um aluno. Critérios: as linhas são as matérias, as colunas são as notas de cada bimestre + a media e a situação do aluno em cada matéria
-
 void PreencheNotas(string[] materias, double[,] notas, int bimestres)
 {
     for (int i = 0; i < materias.Length; i++)
@@ -10,11 +9,10 @@ void PreencheNotas(string[] materias, double[,] notas, int bimestres)
         for (int j = 0; j < bimestres; j++)
         {
             Console.WriteLine($"Digite a nota do {j + 1}º bimestre de {materias[i]}");
-            notas[i, j] = double.Parse(Console.ReadLine());
+            notas[i, j] = Random.Shared.Next(1,10);
         }
     }
 }
-
 void CalculaMedias(double[,] notas, int qtdMaterias, int bimestres)
 {
     for (int i = 0; i < qtdMaterias; i++)
@@ -29,7 +27,6 @@ void CalculaMedias(double[,] notas, int qtdMaterias, int bimestres)
         notas[i, bimestres] = soma / bimestres;
     }
 }
-
 string DefineSituacao(double media)
 {
     if (media >= 6)
@@ -44,26 +41,25 @@ string DefineSituacao(double media)
 
     return "Reprovado";
 }
-
 void ExibeBoletim(string aluno, string[] materias, double[,] notas, int bimestres)
 {
     Console.WriteLine($"===== BOLETIM ESCOLAR - {aluno} =====");
-    Console.Write("Matéria".PadRight(15));
+    Console.Write("Matéria");
 
     for (int j = 0; j < bimestres; j++)
     {
-        Console.Write($"{j + 1}º Bim".PadRight(8));
+        Console.Write($"{j + 1}º Bim");
     }
 
-    Console.WriteLine("Média".PadRight(8) + "Situação");
+    Console.WriteLine("Média" + "Situação");
 
     for (int i = 0; i < materias.Length; i++)
     {
-        Console.Write(materias[i].PadRight(15));
+        Console.Write(materias[i]);
 
         for (int j = 0; j <= bimestres; j++)
         {
-            Console.Write($"{notas[i, j]:F1}".PadRight(8));
+            Console.Write($"{notas[i, j]:F1}");
         }
 
         Console.WriteLine(DefineSituacao(notas[i, bimestres]));
